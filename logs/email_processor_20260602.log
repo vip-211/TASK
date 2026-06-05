@@ -1,0 +1,166 @@
+2026-06-02 15:31:50,725 - workflow - INFO - Starting email processing workflow
+2026-06-02 15:31:50,793 - agent.intent_detection - INFO - Processing email for intent detection
+2026-06-02 15:32:41,533 - agent.intent_detection - INFO - Detected intents: ['BALANCE_ENQUIRY']
+2026-06-02 15:32:41,554 - agent.sentiment_analysis - INFO - Processing email for sentiment analysis
+2026-06-02 15:37:32,867 - workflow - INFO - Starting email processing workflow
+2026-06-02 15:37:32,877 - agent.intent_detection - INFO - Processing email for intent detection
+2026-06-02 15:38:25,542 - agent.intent_detection - INFO - Detected intents: ['BALANCE_ENQUIRY']
+2026-06-02 15:38:25,574 - agent.sentiment_analysis - INFO - Processing email for sentiment analysis
+2026-06-02 15:38:42,603 - agent.sentiment_analysis - INFO - Detected sentiment: NEUTRAL
+2026-06-02 15:38:42,606 - agent.entity_extraction - INFO - Processing email for entity extraction
+2026-06-02 15:39:00,520 - agent.entity_extraction - INFO - Extracted entities: account_numbers=['1234567890'] card_numbers=[] date_ranges=[] transaction_counts=[] customer_name='null'
+2026-06-02 15:39:00,525 - agent.validation - INFO - Starting validation of extracted entities
+2026-06-02 15:39:00,582 - agent.validation - INFO - Validated 1 requests
+2026-06-02 15:39:00,647 - agent.api_execution - INFO - Starting API execution
+2026-06-02 15:39:00,649 - agent.api_execution - INFO - Fetched balance for 1234567890
+2026-06-02 15:39:00,652 - agent.response_generation - INFO - Generating response email
+2026-06-02 15:39:40,861 - agent.response_generation - INFO - Response generated successfully
+2026-06-02 15:39:40,887 - workflow - INFO - Email processing workflow completed
+2026-06-02 15:41:48,944 - workflow - INFO - Starting email processing workflow
+2026-06-02 15:41:49,053 - agent.intent_detection - INFO - Processing email for intent detection
+2026-06-02 15:42:03,653 - agent.intent_detection - INFO - Detected intents: ['BALANCE_ENQUIRY']
+2026-06-02 15:42:03,743 - agent.sentiment_analysis - INFO - Processing email for sentiment analysis
+2026-06-02 15:42:44,316 - workflow - INFO - Starting email processing workflow
+2026-06-02 15:42:44,343 - agent.intent_detection - INFO - Processing email for intent detection
+2026-06-02 15:42:55,244 - agent.intent_detection - INFO - Detected intents: ['BALANCE_ENQUIRY']
+2026-06-02 15:42:55,277 - agent.sentiment_analysis - INFO - Processing email for sentiment analysis
+2026-06-02 15:43:03,112 - agent.sentiment_analysis - INFO - Detected sentiment: NEUTRAL
+2026-06-02 15:43:03,125 - agent.entity_extraction - INFO - Processing email for entity extraction
+2026-06-02 15:43:17,401 - agent.entity_extraction - INFO - Extracted entities: account_numbers=['1234567890'] card_numbers=[] date_ranges=[] transaction_counts=[] customer_name=None
+2026-06-02 15:43:17,505 - agent.validation - INFO - Starting validation of extracted entities
+2026-06-02 15:43:17,625 - agent.validation - INFO - Validated 1 requests
+2026-06-02 15:43:17,675 - agent.api_execution - INFO - Starting API execution
+2026-06-02 15:43:17,738 - agent.api_execution - INFO - Fetched balance for 1234567890
+2026-06-02 15:43:17,823 - agent.response_generation - INFO - Generating response email
+2026-06-02 15:43:36,488 - agent.response_generation - INFO - Response generated successfully
+2026-06-02 15:43:36,496 - workflow - INFO - Email processing workflow completed
+2026-06-02 15:43:59,114 - workflow - INFO - Starting email processing workflow
+2026-06-02 15:43:59,120 - agent.intent_detection - INFO - Processing email for intent detection
+2026-06-02 15:44:08,898 - agent.intent_detection - INFO - Detected intents: ['BALANCE_ENQUIRY']
+2026-06-02 15:44:08,940 - agent.sentiment_analysis - INFO - Processing email for sentiment analysis
+2026-06-02 15:44:14,208 - agent.sentiment_analysis - INFO - Detected sentiment: NEUTRAL
+2026-06-02 15:44:14,246 - agent.entity_extraction - INFO - Processing email for entity extraction
+2026-06-02 15:44:22,423 - agent.entity_extraction - INFO - Extracted entities: account_numbers=['1234567890'] card_numbers=[] date_ranges=[] transaction_counts=[] customer_name='null'
+2026-06-02 15:44:22,451 - agent.validation - INFO - Starting validation of extracted entities
+2026-06-02 15:44:22,489 - agent.validation - INFO - Validated 1 requests
+2026-06-02 15:44:22,605 - agent.api_execution - INFO - Starting API execution
+2026-06-02 15:44:22,616 - agent.api_execution - INFO - Fetched balance for 1234567890
+2026-06-02 15:44:22,666 - agent.response_generation - INFO - Generating response email
+2026-06-02 15:44:49,843 - agent.response_generation - INFO - Response generated successfully
+2026-06-02 15:44:49,892 - workflow - INFO - Email processing workflow completed
+2026-06-02 15:44:50,155 - workflow - INFO - Starting email processing workflow
+2026-06-02 15:44:50,157 - agent.intent_detection - INFO - Processing email for intent detection
+2026-06-02 15:45:03,089 - agent.intent_detection - INFO - Detected intents: ['CREDIT_CARD_USAGE']
+2026-06-02 15:45:03,103 - agent.sentiment_analysis - INFO - Processing email for sentiment analysis
+2026-06-02 15:45:16,822 - agent.sentiment_analysis - INFO - Detected sentiment: NEUTRAL
+2026-06-02 15:45:16,851 - agent.entity_extraction - INFO - Processing email for entity extraction
+2026-06-02 15:45:32,482 - agent.entity_extraction - INFO - Extracted entities: account_numbers=[] card_numbers=['XXXX-XX-XXXX-0901'] date_ranges=['Last 5 transactions'] transaction_counts=[5] customer_name=None
+2026-06-02 15:45:32,566 - agent.validation - INFO - Starting validation of extracted entities
+2026-06-02 15:45:32,692 - agent.validation - INFO - Validated 1 requests
+2026-06-02 15:45:32,745 - agent.api_execution - INFO - Starting API execution
+2026-06-02 15:45:32,759 - agent.response_generation - INFO - Generating response email
+2026-06-02 15:46:19,629 - agent.response_generation - INFO - Response generated successfully
+2026-06-02 15:46:19,681 - workflow - INFO - Email processing workflow completed
+2026-06-02 15:46:20,273 - workflow - INFO - Starting email processing workflow
+2026-06-02 15:46:20,368 - agent.intent_detection - INFO - Processing email for intent detection
+2026-06-02 15:46:34,601 - agent.intent_detection - INFO - Detected intents: ['STATEMENT_REQUEST']
+2026-06-02 15:46:34,631 - agent.sentiment_analysis - INFO - Processing email for sentiment analysis
+2026-06-02 15:46:44,266 - agent.sentiment_analysis - INFO - Detected sentiment: NEUTRAL
+2026-06-02 15:46:44,296 - agent.entity_extraction - INFO - Processing email for entity extraction
+2026-06-02 15:46:57,808 - agent.entity_extraction - ERROR - Error in entity extraction: 1 validation error for ExtractedEntities
+transaction_counts.0
+  Input should be a valid integer [type=int_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/int_type
+2026-06-02 15:46:57,888 - agent.validation - INFO - Starting validation of extracted entities
+2026-06-02 15:46:57,892 - agent.validation - INFO - Validated 1 requests
+2026-06-02 15:46:57,901 - agent.api_execution - INFO - Starting API execution
+2026-06-02 15:46:57,903 - agent.response_generation - INFO - Generating response email
+2026-06-02 15:47:51,339 - agent.response_generation - INFO - Response generated successfully
+2026-06-02 15:47:51,388 - workflow - INFO - Email processing workflow completed
+2026-06-02 15:47:51,528 - workflow - INFO - Starting email processing workflow
+2026-06-02 15:47:51,532 - agent.intent_detection - INFO - Processing email for intent detection
+2026-06-02 15:48:11,078 - agent.intent_detection - INFO - Detected intents: ['BALANCE_ENQUIRY', 'CREDIT_CARD_USAGE']
+2026-06-02 15:48:11,113 - agent.sentiment_analysis - INFO - Processing email for sentiment analysis
+2026-06-02 15:48:21,232 - agent.sentiment_analysis - INFO - Detected sentiment: NEUTRAL
+2026-06-02 15:48:21,277 - agent.entity_extraction - INFO - Processing email for entity extraction
+2026-06-02 15:48:38,164 - agent.entity_extraction - INFO - Extracted entities: account_numbers=['1234567890'] card_numbers=['X X X X X X XXX XXX X X'] date_ranges=['April 2026'] transaction_counts=[3] customer_name=None
+2026-06-02 15:48:38,175 - agent.validation - INFO - Starting validation of extracted entities
+2026-06-02 15:48:38,182 - agent.validation - INFO - Validated 2 requests
+2026-06-02 15:48:38,209 - agent.api_execution - INFO - Starting API execution
+2026-06-02 15:48:38,214 - agent.api_execution - INFO - Fetched balance for 1234567890
+2026-06-02 15:48:38,220 - agent.response_generation - INFO - Generating response email
+2026-06-02 15:49:21,551 - agent.response_generation - INFO - Response generated successfully
+2026-06-02 15:49:21,571 - workflow - INFO - Email processing workflow completed
+2026-06-02 15:49:21,628 - workflow - INFO - Starting email processing workflow
+2026-06-02 15:49:21,632 - agent.intent_detection - INFO - Processing email for intent detection
+2026-06-02 15:49:36,807 - agent.intent_detection - INFO - Detected intents: ['BALANCE_ENQUIRY', 'CREDIT_CARD_USAGE']
+2026-06-02 15:49:36,823 - agent.sentiment_analysis - INFO - Processing email for sentiment analysis
+2026-06-02 15:49:47,170 - agent.sentiment_analysis - INFO - Detected sentiment: NEUTRAL
+2026-06-02 15:49:47,204 - agent.entity_extraction - INFO - Processing email for entity extraction
+2026-06-02 15:50:02,690 - agent.entity_extraction - ERROR - Error in entity extraction: 1 validation error for ExtractedEntities
+transaction_counts.0
+  Input should be a valid integer [type=int_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/int_type
+2026-06-02 15:50:02,851 - agent.validation - INFO - Starting validation of extracted entities
+2026-06-02 15:50:03,012 - agent.validation - INFO - Validated 2 requests
+2026-06-02 15:50:03,195 - agent.api_execution - INFO - Starting API execution
+2026-06-02 15:50:03,324 - agent.response_generation - INFO - Generating response email
+2026-06-02 15:50:56,361 - agent.response_generation - INFO - Response generated successfully
+2026-06-02 15:50:56,443 - workflow - INFO - Email processing workflow completed
+2026-06-02 15:59:16,982 - api - INFO - Received email processing request
+2026-06-02 15:59:16,983 - workflow - INFO - Starting email processing workflow
+2026-06-02 15:59:16,992 - agent.intent_detection - INFO - Processing email for intent detection
+2026-06-02 15:59:54,239 - agent.intent_detection - INFO - Detected intents: ['BALANCE_ENQUIRY']
+2026-06-02 15:59:54,301 - agent.sentiment_analysis - INFO - Processing email for sentiment analysis
+2026-06-02 16:00:15,587 - agent.sentiment_analysis - INFO - Detected sentiment: NEUTRAL
+2026-06-02 16:00:15,783 - agent.entity_extraction - INFO - Processing email for entity extraction
+2026-06-02 16:00:37,512 - agent.entity_extraction - INFO - Extracted entities: account_numbers=['1234567890'] card_numbers=[] date_ranges=[] transaction_counts=[] customer_name=None
+2026-06-02 16:00:37,549 - agent.validation - INFO - Starting validation of extracted entities
+2026-06-02 16:00:37,627 - agent.validation - INFO - Validated 1 requests
+2026-06-02 16:00:37,696 - agent.api_execution - INFO - Starting API execution
+2026-06-02 16:00:37,723 - agent.api_execution - INFO - Fetched balance for 1234567890
+2026-06-02 16:00:37,727 - agent.response_generation - INFO - Generating response email
+2026-06-02 16:01:18,715 - agent.response_generation - INFO - Response generated successfully
+2026-06-02 16:01:18,724 - workflow - INFO - Email processing workflow completed
+2026-06-02 16:03:17,020 - api - INFO - Received email processing request
+2026-06-02 16:03:17,024 - workflow - INFO - Starting email processing workflow
+2026-06-02 16:03:17,033 - agent.intent_detection - INFO - Processing email for intent detection
+2026-06-02 16:03:29,202 - agent.intent_detection - INFO - Detected intents: ['BALANCE_ENQUIRY']
+2026-06-02 16:03:29,224 - agent.sentiment_analysis - INFO - Processing email for sentiment analysis
+2026-06-02 16:03:38,539 - agent.sentiment_analysis - INFO - Detected sentiment: NEUTRAL
+2026-06-02 16:03:38,601 - agent.entity_extraction - INFO - Processing email for entity extraction
+2026-06-02 16:03:53,356 - agent.entity_extraction - INFO - Extracted entities: account_numbers=['12345678955'] card_numbers=[] date_ranges=[] transaction_counts=[] customer_name=None
+2026-06-02 16:03:53,438 - agent.validation - INFO - Starting validation of extracted entities
+2026-06-02 16:03:53,509 - agent.validation - INFO - Validated 1 requests
+2026-06-02 16:03:53,545 - agent.api_execution - INFO - Starting API execution
+2026-06-02 16:03:53,601 - agent.response_generation - INFO - Generating response email
+2026-06-02 16:04:38,804 - agent.response_generation - INFO - Response generated successfully
+2026-06-02 16:04:38,843 - workflow - INFO - Email processing workflow completed
+2026-06-02 16:06:58,658 - api - INFO - Received email processing request
+2026-06-02 16:06:58,659 - workflow - INFO - Starting email processing workflow
+2026-06-02 16:06:58,674 - agent.intent_detection - INFO - Processing email for intent detection
+2026-06-02 16:07:15,170 - agent.intent_detection - INFO - Detected intents: ['BALANCE_ENQUIRY']
+2026-06-02 16:07:15,206 - agent.sentiment_analysis - INFO - Processing email for sentiment analysis
+2026-06-02 16:07:29,177 - agent.sentiment_analysis - INFO - Detected sentiment: NEUTRAL
+2026-06-02 16:07:29,267 - agent.entity_extraction - INFO - Processing email for entity extraction
+2026-06-02 16:07:47,420 - agent.entity_extraction - INFO - Extracted entities: account_numbers=['1234567899'] card_numbers=[] date_ranges=[] transaction_counts=[] customer_name='null'
+2026-06-02 16:07:47,508 - agent.validation - INFO - Starting validation of extracted entities
+2026-06-02 16:07:47,624 - agent.validation - INFO - Validated 1 requests
+2026-06-02 16:07:47,677 - agent.api_execution - INFO - Starting API execution
+2026-06-02 16:07:47,745 - agent.response_generation - INFO - Generating response email
+2026-06-02 16:08:30,622 - agent.response_generation - INFO - Response generated successfully
+2026-06-02 16:08:30,663 - workflow - INFO - Email processing workflow completed
+2026-06-02 16:08:30,826 - api - INFO - Received email processing request
+2026-06-02 16:08:30,832 - workflow - INFO - Starting email processing workflow
+2026-06-02 16:08:30,856 - agent.intent_detection - INFO - Processing email for intent detection
+2026-06-02 16:08:43,749 - agent.intent_detection - INFO - Detected intents: ['BALANCE_ENQUIRY']
+2026-06-02 16:08:43,758 - agent.sentiment_analysis - INFO - Processing email for sentiment analysis
+2026-06-02 16:08:52,131 - agent.sentiment_analysis - INFO - Detected sentiment: NEUTRAL
+2026-06-02 16:08:52,208 - agent.entity_extraction - INFO - Processing email for entity extraction
+2026-06-02 16:09:04,188 - agent.entity_extraction - INFO - Extracted entities: account_numbers=['1234567898'] card_numbers=[] date_ranges=[] transaction_counts=[] customer_name='null'
+2026-06-02 16:09:04,238 - agent.validation - INFO - Starting validation of extracted entities
+2026-06-02 16:09:04,301 - agent.validation - INFO - Validated 1 requests
+2026-06-02 16:09:04,368 - agent.api_execution - INFO - Starting API execution
+2026-06-02 16:09:04,374 - agent.response_generation - INFO - Generating response email
+2026-06-02 16:09:43,251 - agent.response_generation - INFO - Response generated successfully
+2026-06-02 16:09:43,272 - workflow - INFO - Email processing workflow completed
