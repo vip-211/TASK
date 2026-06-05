@@ -16,28 +16,33 @@ class SentimentAnalysisAgent(BaseAgent):
             model=settings.ollama_model,
             base_url=settings.ollama_base_url
         )
+        
+    def _rule_based_sentiment(self, email_content: str):
+        content_lower = email_content.lower()
+        # Check for urgent keywords first
+        urgent_keywords = ["urgent", "asap", "immediately", "emergency", "critical"]
+        if any(keyword in content_lower for keyword in urgent_keywords):
+            return Sentiment(type="URGENT", confidence=0.95)
+        # Check for positive keywords
+        positive_keywords = ["thank", "thanks", "great", "happy", "satisfied", "excellent"]
+        if any(keyword in content_lower for keyword in positive_keywords):
+            return Sentiment(type="POSITIVE", confidence=0.95)
+        # Check for negative keywords
+        negative_keywords = ["angry", "frustrated", "annoyed", "terrible", "bad", "worst"]
+        if any(keyword in content_lower for keyword in negative_keywords):
+            return Sentiment(type="NEGATIVE", confidence=0.95)
+        # Default to neutral
+        return Sentiment(type="NEUTRAL", confidence=0.95)
 
     def execute(self, state: EmailProcessingState) -> EmailProcessingState:
         self.logger.info(f"Processing email for sentiment analysis")
         
         try:
-            prompt = SENTIMENT_ANALYSIS_PROMPT.format(email_content=state.email_content)
-            response = self.llm.invoke(prompt)
-            
-            json_match = re.search(r'\{.*\}', response, re.DOTALL)
-            if json_match:
-                json_str = json_match.group(0)
-                data = json.loads(json_str)
-                
-                sentiment = Sentiment(
-                    type=data.get("type", "NEUTRAL"),
-                    confidence=data.get("confidence", 0.9)
-                )
-                
-                state.sentiment = sentiment
-                self.logger.info(f"Detected sentiment: {sentiment.type}")
-            else:
-                state.sentiment = Sentiment(type="NEUTRAL", confidence=0.5)
+            # Try rule-based first
+            sentiment = self._rule_based_sentiment(state.email_content)
+            state.sentiment = sentiment
+            self.logger.info(f"Detected sentiment (rule-based): {sentiment.type}")
+            return state
                 
         except Exception as e:
             self.logger.error(f"Error in sentiment analysis: {str(e)}")

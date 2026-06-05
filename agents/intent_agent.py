@@ -1,46 +1,35 @@
 
-import json
-import re
+
 from typing import Any, Dict
 from agents.base_agent import BaseAgent
 from models.schemas import Intent, EmailProcessingState
-from prompts.agent_prompts import INTENT_DETECTION_PROMPT
-from langchain_ollama import OllamaLLM
-from config.config import settings
 
 
 class IntentDetectionAgent(BaseAgent):
     def __init__(self):
         super().__init__("intent_detection")
-        self.llm = OllamaLLM(
-            model=settings.ollama_model,
-            base_url=settings.ollama_base_url
-        )
+
+    def _rule_based_intent_detection(self, email_content: str):
+        intents = []
+        content_lower = email_content.lower()
+        
+        if any(keyword in content_lower for keyword in ["balance", "account balance"]):
+            intents.append(Intent(type="BALANCE_ENQUIRY", confidence=0.95))
+        if any(keyword in content_lower for keyword in ["credit card", "card transaction", "transactions"]):
+            intents.append(Intent(type="CREDIT_CARD_USAGE", confidence=0.95))
+        if any(keyword in content_lower for keyword in ["statement", "bank statement"]):
+            intents.append(Intent(type="STATEMENT_REQUEST", confidence=0.95))
+        
+        return intents
 
     def execute(self, state: EmailProcessingState) -> EmailProcessingState:
-        self.logger.info(f"Processing email for intent detection")
+        self.logger.info("Processing email for intent detection")
         
         try:
-            prompt = INTENT_DETECTION_PROMPT.format(email_content=state.email_content)
-            response = self.llm.invoke(prompt)
-            
-            json_match = re.search(r'\{.*\}', response, re.DOTALL)
-            if json_match:
-                json_str = json_match.group(0)
-                data = json.loads(json_str)
-                
-                intents = [
-                    Intent(
-                        type=intent["type"],
-                        confidence=intent.get("confidence", 0.9)
-                    )
-                    for intent in data.get("intents", [])
-                ]
-                
-                state.intents = intents
-                self.logger.info(f"Detected intents: {[i.type for i in intents]}")
-            else:
-                self.logger.warning("Could not parse intent response")
+            # Use only rule-based
+            intents = self._rule_based_intent_detection(state.email_content)
+            state.intents = intents
+            self.logger.info(f"Detected intents: {[i.type for i in intents]}")
                 
         except Exception as e:
             self.logger.error(f"Error in intent detection: {str(e)}")

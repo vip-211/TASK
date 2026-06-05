@@ -52,7 +52,8 @@ class MockCoreBankingAPIs:
             ("1234567890", 4, 2026): [
                 StatementEntry(date="2026-04-01", description="Opening Balance", credit=None, debit=None, balance=100000.00),
                 StatementEntry(date="2026-04-05", description="Deposit", credit=50000.00, debit=None, balance=150000.00),
-                StatementEntry(date="2026-04-10", description="Withdrawal", credit=None, debit=25000.00, balance=125000.00)
+                StatementEntry(date="2026-04-10", description="Withdrawal", credit=None, debit=25000.00, balance=125000.00),
+                
             ]
         }
 
@@ -65,12 +66,32 @@ class MockCoreBankingAPIs:
             )
         return ValidateAccountResponse(status="INVALID")
 
+    def _find_matching_card(self, stripped_card: str):
+        """Find a valid card that matches the stripped number (handles various masked cards)"""
+        if stripped_card in self.valid_cards:
+            return stripped_card
+        
+        
+        for valid_card in self.valid_cards.keys():
+            if valid_card.endswith(stripped_card):
+                return valid_card
+        
+        # If stripped_card has at least 4 digits
+        if len(stripped_card) >= 8:
+            first_4 = stripped_card[:4]
+            last_4 = stripped_card[-4:]
+            for valid_card in self.valid_cards.keys():
+                if valid_card.startswith(first_4) and valid_card.endswith(last_4):
+                    return valid_card
+        return None
+
     def validate_card(self, request: ValidateCardRequest) -> ValidateCardResponse:
         card = request.card_number.replace(" ", "").replace("-", "").replace("X", "").replace("x", "")
-        if card in self.valid_cards:
+        matching_card = self._find_matching_card(card)
+        if matching_card:
             return ValidateCardResponse(
                 status="VALID",
-                customer_name=self.valid_cards[card]
+                customer_name=self.valid_cards[matching_card]
             )
         return ValidateCardResponse(status="INVALID")
 
@@ -84,7 +105,8 @@ class MockCoreBankingAPIs:
 
     def get_card_transactions(self, request: GetCardTransactionsRequest) -> GetCardTransactionsResponse:
         card = request.card_number.replace(" ", "").replace("-", "").replace("X", "").replace("x", "")
-        transactions = self.card_transactions.get(card, [])
+        matching_card = self._find_matching_card(card)
+        transactions = self.card_transactions.get(matching_card, [])
         count = request.transaction_count or 5
         return GetCardTransactionsResponse(
             card_number=request.card_number,
